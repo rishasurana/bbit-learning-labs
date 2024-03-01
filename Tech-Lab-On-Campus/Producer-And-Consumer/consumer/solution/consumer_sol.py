@@ -3,8 +3,6 @@ import os
 import json
 from consumer_interface import mqConsumerInterface
 
-AMQP_URL =  'amqp://rabbitmq?connection_attempts=5&retry_delay=5' 
-
 class mqConsumer(mqConsumerInterface):
     def __init__(self, binding_key, exchange_name, queue_name) -> None:
             
