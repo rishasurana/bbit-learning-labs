@@ -45,7 +45,8 @@ class mqConsumer(mqConsumerInterface):
         # Acknowledge message
         channel.basic_ack(method_frame.delivery_tag, False)
 
-        message = json.loads(body)
+
+        message = body.decode("utf-8")
         #Print message (The message is contained in the body parameter variable)
         print(message)
 
