@@ -15,7 +15,7 @@
 import argparse
 import sys
 
-from solution.sol_producer import mqProducer  # pylint: disable=import-error
+from solution.producer_sol import mqProducer  # pylint: disable=import-error
 
 
 def main(ticker: str, price: float, sector: str) -> None:
@@ -25,7 +25,8 @@ def main(ticker: str, price: float, sector: str) -> None:
     #                       WRITE CODE HERE!!!
     #
 
-    routingKey = f"{sector},{ticker}"
+    routingKey = f"#.{sector}.#"
+
     producer = mqProducer(routing_key=routingKey,exchange_name="Tech Lab Topic Exchange")
 
 
